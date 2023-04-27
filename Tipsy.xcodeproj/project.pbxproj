@@ -12,6 +12,8 @@
 		04EDB41029FA4EB200C0CB22 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EDB40F29FA4EB200C0CB22 /* ViewController.swift */; };
 		04EDB41529FA4EB300C0CB22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04EDB41429FA4EB300C0CB22 /* Assets.xcassets */; };
 		04EDB41829FA4EB300C0CB22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04EDB41629FA4EB300C0CB22 /* LaunchScreen.storyboard */; };
+		04EDB42229FA7D4600C0CB22 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 04EDB42129FA7D4600C0CB22 /* SnapKit */; };
+		04EDB42429FAA2C500C0CB22 /* SurveyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EDB42329FAA2C500C0CB22 /* SurveyButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,7 @@
 		04EDB41429FA4EB300C0CB22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04EDB41729FA4EB300C0CB22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04EDB41929FA4EB300C0CB22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04EDB42329FAA2C500C0CB22 /* SurveyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04EDB42229FA7D4600C0CB22 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,14 +58,23 @@
 		04EDB40A29FA4EB200C0CB22 /* Tipsy */ = {
 			isa = PBXGroup;
 			children = (
-				04EDB40B29FA4EB200C0CB22 /* AppDelegate.swift */,
-				04EDB40D29FA4EB200C0CB22 /* SceneDelegate.swift */,
+				04EDB41F29FA7BC000C0CB22 /* App support */,
 				04EDB40F29FA4EB200C0CB22 /* ViewController.swift */,
+				04EDB42329FAA2C500C0CB22 /* SurveyButton.swift */,
 				04EDB41429FA4EB300C0CB22 /* Assets.xcassets */,
 				04EDB41629FA4EB300C0CB22 /* LaunchScreen.storyboard */,
 				04EDB41929FA4EB300C0CB22 /* Info.plist */,
 			);
 			path = Tipsy;
+			sourceTree = "<group>";
+		};
+		04EDB41F29FA7BC000C0CB22 /* App support */ = {
+			isa = PBXGroup;
+			children = (
+				04EDB40D29FA4EB200C0CB22 /* SceneDelegate.swift */,
+				04EDB40B29FA4EB200C0CB22 /* AppDelegate.swift */,
+			);
+			path = "App support";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,6 +93,9 @@
 			dependencies = (
 			);
 			name = Tipsy;
+			packageProductDependencies = (
+				04EDB42129FA7D4600C0CB22 /* SnapKit */,
+			);
 			productName = Tipsy;
 			productReference = 04EDB40829FA4EB200C0CB22 /* Tipsy.app */;
 			productType = "com.apple.product-type.application";
@@ -108,6 +124,9 @@
 				Base,
 			);
 			mainGroup = 04EDB3FF29FA4EB200C0CB22;
+			packageReferences = (
+				04EDB42029FA7D4600C0CB22 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 04EDB40929FA4EB200C0CB22 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,6 +156,7 @@
 				04EDB41029FA4EB200C0CB22 /* ViewController.swift in Sources */,
 				04EDB40C29FA4EB200C0CB22 /* AppDelegate.swift in Sources */,
 				04EDB40E29FA4EB200C0CB22 /* SceneDelegate.swift in Sources */,
+				04EDB42429FAA2C500C0CB22 /* SurveyButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +374,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		04EDB42029FA7D4600C0CB22 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		04EDB42129FA7D4600C0CB22 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04EDB42029FA7D4600C0CB22 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 04EDB40029FA4EB200C0CB22 /* Project object */;
 }
