@@ -7,22 +7,25 @@
 
 import UIKit
 
-class SurveyButton: UIButton {
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
+class CustomButton: UIButton {
+    init(title: String) {
+        super.init(frame: .zero)
+        setTitle(title, for: .normal)
+        self.setupButton()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        self.setupButton()
     }
     
     func setupButton() {
         setTitleColor(.white, for: .normal)
-        titleLabel?.text = "Calculate"
         backgroundColor = .green
-        titleLabel?.font = UIFont(name: "AvenirNext-DemiBoldItalic", size: 25)
+        titleLabel?.font = UIFont.boldSystemFont(ofSize: 24)
         layer.cornerRadius = 15
+        clipsToBounds = true
+        
     }
     
     
