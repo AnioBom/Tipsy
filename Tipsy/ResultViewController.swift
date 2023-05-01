@@ -9,7 +9,7 @@ import UIKit
 
 class ResultViewController: UIViewController {
     
-    private let splitAmount:Double
+    private let splitAmount: Double
     
     init(splitAmount: Double) {
         self.splitAmount = splitAmount
@@ -20,18 +20,43 @@ class ResultViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    let titleLabel: UILabel = {
+    let firstLable : UILabel = {
         let label = UILabel()
-        label.textColor = .white
+        label.textColor = .gray
+        label.text = "Total per person"
+        label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 25)
         return label
+    }()
+    
+    let titleLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .systemGreen
+        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 40)
+        return label
+    }()
+    
+    let descriptionLable : UILabel = {
+        let label = UILabel()
+        label.textColor = .white
+        label.text = "Split between people, with tip %."
+        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 25)
+        return label
+    }()
+    
+    let secondView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .systemGreen
+        return view
     }()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         
-        view.backgroundColor = .systemGreen
         confuge()
         displeyResult()
         
@@ -39,7 +64,7 @@ class ResultViewController: UIViewController {
    
     private func displeyResult() {
         let formattedAmount = String(format: "%.2f", splitAmount)
-        let resultText = "Your part \(formattedAmount)"
+        let resultText = "\(formattedAmount)"
         titleLabel.text = resultText
     }
 
@@ -48,8 +73,30 @@ class ResultViewController: UIViewController {
 extension ResultViewController {
     
     func confuge() {
+        
+        view.addSubview(secondView)
+        secondView.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(300)
+            make.leading.trailing.equalToSuperview()
+            make.bottom.equalToSuperview()
+        }
+        
+        view.addSubview(firstLable)
+        firstLable.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(100)
+            make.trailing.leading.equalToSuperview()
+            make.centerX.equalToSuperview()
+        }
+        
         view.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(firstLable.snp.bottom).offset(30)
+            make.leading.trailing.equalToSuperview()
+        }
+        
+        view.addSubview(descriptionLable)
+        descriptionLable.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.centerY.equalToSuperview()
         }
